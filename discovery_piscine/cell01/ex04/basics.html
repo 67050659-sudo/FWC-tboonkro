@@ -5,18 +5,38 @@
 
 body {
     background-color:Pink;
+    margin:0;
+    padding: 0 50px;
 }
-
+.shop-frame {
+    display:flex;
+    justify-content: center;
+    gap: 40px;
+}
+.shop-column {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
 </style>
 
 <body>
     <h1 style='text-align:center'>-So better-</h1>
 
-    <!--
-    <img class='image-container' src=''; alt='Shop left'>
-    <img class='image-container' src=''; alt='Shop right'> 
-    -->
-    
+    <div class="shop-frame">
+        <div class="shop-column">
+            <img class='.leftshop' src='https://www.pngmart.com/files/12/Shopee-Logo-Transparent-Background.png'; alt='Shopee'; width="500px">
+            <a href="https://shopee.co.th/"; target="_blank">Link to shop left</a>
+        </div>    
+        <div class="shop-column">
+            <img class='.rightshop' src='https://tse3.mm.bing.net/th/id/OIP.f7VKGDMix2fI0tXwFXeXVAHaEK?r=0&rs=1&pid=ImgDetMain&o=7&rm=3'; alt='Lazada'; width="500px">  
+            <a href="https://www.lazada.co.th/"; target='_blank'>Link to Lazada</a>
+        </div>    
+    </div>
+
+<hr>
+
+<footer style="font-family: monospace; font-style: italic; text-align: right;"> &#x00A9; wil 2026</footer>
 
 </body>
 
