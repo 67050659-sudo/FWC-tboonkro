@@ -3,6 +3,7 @@ const myBack = document.getElementById('Le_Back')
 
 myButton.addEventListener('click', function(){
     
-    myBack.style.backgroundColor = 'Blue'
+    const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+    myBack.style.backgroundColor = randomColor;
 
 });
