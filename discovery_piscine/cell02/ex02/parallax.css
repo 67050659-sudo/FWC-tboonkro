@@ -1,0 +1,22 @@
+
+            body, html {
+                height: 100%;
+                margin: 0;
+            }
+            .parallax {
+                height: 100%;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .block {
+                background-color: black;
+                color: white;
+                width: fit-content;
+                margin: 0 auto; 
+            }
+       

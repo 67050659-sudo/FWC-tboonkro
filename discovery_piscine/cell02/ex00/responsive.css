@@ -1,0 +1,28 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.box {
+    display: flex;
+    border: 2px solid black;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.left-box {
+    background-color: greenyellow;
+    flex: 1; 
+    padding: 20px;
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
+
+.right-box {
+    background-color: salmon;
+    flex: 1; 
+    padding: 20px;
+    padding-top: 50%;
+    padding-bottom: 50%; 
+}

@@ -1,0 +1,38 @@
+
+body {
+        background-color: cornsilk;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+.dropdown {
+        position: relative;
+        display: inline-block;
+    }
+.dropbutt {
+        background-color: black;
+        color: white;
+        padding: 16px 24px;
+        font-size: 16px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+.dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: white;
+        min-width: 200px;
+        border-radius: 5px;
+        margin-top: 5px;
+    }
+.dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+    }
+.dropdown:hover .dropdown-content {
+        display: block;
+    }
