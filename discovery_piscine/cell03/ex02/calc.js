@@ -21,7 +21,7 @@ submitButton.addEventListener('click', function() {
     const num2 = Number(inputBoxes[1].value);
     let result;
 
-    if (isNaN(num1) || isNaN(num2) || num1 <= 0 || num2 <= 0) {
+    if (isNaN(num1) || isNaN(num2) || num1 < 0 || num2 < 0) {
         alert('Error :(');
         return;
     }
