@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    background-color: coral;
+}
+
+#newButton {
+    padding: 10px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: blue;
+    color: white;
+    border: none;
+    margin-bottom: 20px;
+}
+
+#newButton:hover {
+    background-color: darkblue;
+}
+
+#ft_list {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.todo-item {
+    background-color: white;
+    padding: 12px 15px;
+    border: 1px solid gray;
+    cursor: pointer;
+    word-break: break-all;
+    transition: background-color 0.2s;
+}

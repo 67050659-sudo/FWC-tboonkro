@@ -4,14 +4,14 @@ const Balloon_Size = document.getElementById('Balloon_Color');
 let balloonsize_inc = 200;
 let color_range = 0;
 
-const balloon_Color = ['Red' , 'Green', 'Blue', 'Black']
+const balloon_Color = ['Red' , 'Green', 'Blue']
 
 myBalloon_Butt.addEventListener('click', function(){
 
     balloonsize_inc += 10;
     color_range += 1;
 
-    if (color_range > 3){
+    if (color_range > 2){
         color_range = 0;
     }
     
@@ -34,7 +34,7 @@ Balloon_Size.addEventListener('mouseleave', function(){
 
     color_range -= 1;
     if (color_range < 0){
-        color_range = 3;
+        color_range = 2;
     }    
 
     Change_Balloon();
