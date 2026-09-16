@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.box {
+    display: 1;
+    background-color: gray;
+    margin:10px;
+    padding: 5px;
+
+}
+
+.operators {
+    display: 1;
+    background-color: gray;
+    margin: 10px;
+    padding: 5px;
+}
