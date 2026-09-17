@@ -3,10 +3,10 @@ const ft_list = document.getElementById('ft_list');
 
 window.addEventListener('load', loadFromCookies);
 
-button.addEventListener('click', function() {
+button.addEventListener('click', () => {
     const text = prompt("Enter a new TO DO:");
-    if (text !== null && text.trim() !== "") {
-        addTodoItem(text, true);
+    if (text.trim()) {
+        addTodoItem(text.trim(), true);
     }
 });
 
@@ -15,14 +15,14 @@ function addTodoItem(text, shouldSave) {
     div.className = 'todo-item';
     div.textContent = text;
 
-    div.addEventListener('click', function() {
+    div.addEventListener('click', () => {
         if (confirm("Remove To-Do item?")) {
             div.remove();
             saveToCookies();
         }
     });
 
-    ft_list.insertBefore(div, ft_list.firstChild);
+    ft_list.prepend(div);
 
     if (shouldSave) {
         saveToCookies();
@@ -30,26 +30,16 @@ function addTodoItem(text, shouldSave) {
 }
 
 function saveToCookies() {
-    const divs = ft_list.getElementsByTagName('div');
-    const tasks = [];
-    
-    for (let i = 0; i < divs.length; i++) {
-        tasks.push(divs[i].textContent);
-    }
-
-    document.cookie = "todos=" + encodeURIComponent(JSON.stringify(tasks)) + ";path=/";
+    const tasks = Array.from(ft_list.children).map(div => div.textContent);
+    document.cookie = `todos=${encodeURIComponent(JSON.stringify(tasks))};path=/`;
 }
 
 function loadFromCookies() {
-    const cookies = document.cookie.split(';');
+    const cookieString = document.cookie.split(';').find(c => c.trim().startsWith('todos='));
+    if (!cookieString) return;
+
+    const value = cookieString.trim().split('=')[1];
+    const tasks = JSON.parse(decodeURIComponent(value));
     
-    for (let i = 0; i < cookies.length; i++) {
-        const pair = cookies[i].trim().split('=');
-        if (pair[0] === 'todos') {
-            const tasks = JSON.parse(decodeURIComponent(pair[1]));
-            for (let j = tasks.length - 1; j >= 0; j--) {
-                addTodoItem(tasks[j], false);
-            }
-        }
-    }
+    tasks.reverse().forEach(text => addTodoItem(text, false));
 }
